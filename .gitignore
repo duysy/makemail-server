@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+upload.py
 # Distribution / packaging
 .Python
 env/
@@ -95,10 +95,15 @@ __pypackages__/
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
+upload.py
+key_value_store.json
+test.py
+upload.zip
+upload.exe
 
 # SageMath parsed files
 *.sage.py
-
+data/
 # Environments
 .env
 .venv
@@ -107,17 +112,14 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
 # Spyder project settings
 .spyderproject
 .spyproject
-
 # Rope project settings
 .ropeproject
 
 # mkdocs documentation
 /site
-
 # mypy
 .mypy_cache/
 .dmypy.json

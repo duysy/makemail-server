@@ -11,7 +11,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
-      - "33333:3306"
+      - "${MYSQL_PORT}:3306"
     networks:
       - app-network
 
@@ -19,15 +19,20 @@ services:
     build: .
     ports:
       - "5000:5000"
+    restart: always
     depends_on:
       - mysql
     environment:
       - DATABASE_URL=mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@mysql/${MYSQL_DATABASE}
+    command: python main.py
+    volumes:
+      - .:/app
     networks:
       - app-network
 
 networks:
   app-network:
+
 
 volumes:
   db_data:
