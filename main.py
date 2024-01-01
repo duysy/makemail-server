@@ -15,7 +15,6 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 
 api_key = os.getenv('KEY_API', 'hellocacban123123')
-flask_port = os.getenv('FLASK_PORT', 5000)
 
 # Configure the database
 database_uri = os.getenv(
@@ -317,4 +316,4 @@ def get_model_by_name(name):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(host='0.0.0.0', debug=True,port=flask_port)
+    app.run(host='0.0.0.0', debug=True)
